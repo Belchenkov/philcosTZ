@@ -2,6 +2,22 @@
 
 require_once 'db/connect_db.php';
 
+if (isset($_GET['id'])) {
+    $id = (integer)htmlspecialchars(trim($_GET['id'], ' '));
+
+    if ($conn) {
+        // UPDATE DATA
+        $query = "UPDATE `comments` SET `admin_ok`= 1 WHERE `id`=$id";
+
+        if (!mysqli_query($conn, $query)) {
+            die(mysqli_error($conn));
+        } else {
+            header("Location: admin.php?published=Отзыв опубликован!");
+        }
+
+    }
+}
+
 if (isset($_POST['submit'])) {
     if (!empty($_POST['name']) && !empty($_POST['surname']) && !empty($_POST['city']) && !empty($_POST['age']) && !empty($_POST['message'])) {
 
@@ -30,3 +46,5 @@ if (isset($_POST['submit'])) {
 
     }
 }
+
+

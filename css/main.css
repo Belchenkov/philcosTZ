@@ -167,6 +167,11 @@ textarea {
         color: white;
     }
 
+    .atHome {
+        float: right;
+        padding: 15px 20px ;
+    }
+
 
     footer {
         text-align: center;

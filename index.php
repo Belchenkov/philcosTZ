@@ -2,8 +2,8 @@
     require_once 'db/connect_db.php';
 
     // SELECT QUERY
-    $query_all = 'SELECT * FROM `comments` ORDER BY `id` DESC';
-    $query_last = 'SELECT * FROM `comments` ORDER BY `id` DESC LIMIT 3';
+    $query_all = 'SELECT * FROM `comments` WHERE `admin_ok`=1 ORDER BY `id` DESC';
+    $query_last = 'SELECT * FROM `comments` WHERE `admin_ok`=1 ORDER BY `id` DESC LIMIT 3';
 
     $messages_all = mysqli_query($conn, $query_all);
     $messages_last = mysqli_query($conn, $query_last);
