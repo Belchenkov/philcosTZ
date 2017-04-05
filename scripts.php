@@ -12,13 +12,15 @@ if (isset($_GET['id'])) {
         if (!mysqli_query($conn, $query)) {
             die(mysqli_error($conn));
         } else {
+
+
             header("Location: admin.php?published=Отзыв опубликован!");
         }
 
     }
 }
 
-if (isset($_POST['submit'])) {
+
     if (!empty($_POST['name']) && !empty($_POST['surname']) && !empty($_POST['city']) && !empty($_POST['age']) && !empty($_POST['message'])) {
 
         $name = htmlspecialchars(trim($_POST['name'], ' '));
@@ -28,21 +30,25 @@ if (isset($_POST['submit'])) {
         $message = htmlspecialchars(trim($_POST['message'], ''));
 
         //echo $name ."\n" . $surname . "\n" . $age . "\n" . $message . "\n";
+        echo "Ваш отзыв принят! Спасибо!";
 
         if ($conn) {
             // INSERT DATA
-            $query = "INSERT INTO `comments` (`name`, `surname`, `city`, `age`, `message`) VALUES('$name', '$surname', '$city', '$age', '$message')";
+            //$query = "INSERT INTO `comments` (`name`, `surname`, `city`, `age`, `message`) VALUES('$name', '$surname', '$city', '$age', '$message')";
 
-            if(!mysqli_query($conn, $query)){
+            /*if(!mysqli_query($conn, $query)){
                 die(mysqli_error($conn));
-            } else {
-                //header("Location: index.php?success=Message%20Added");
-                echo "Добавлен новый отзыв и ожидает проверки модератора";
-            }
+            } else {*/
+
+                $admin_message = 'Добавлен новый отзыв от ' . $name . ' ' . $surname . ', который ожидает проверки!';
+                mail('u608110@gmail.com', 'Добавлен новый отзыв', $admin_message);
+
+                //header("Location: index.php?success=Ваш%20отзыв%20принят!%20Спасибо!");
+            /*}*/
         }
-    }
+//    }
     else {
-        header("Location: index.php?error_message=Заполните пожалуйста все поля");
+        echo "Заполните, пожалуйста, все поля!";
 
     }
 }
