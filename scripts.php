@@ -38,9 +38,6 @@ if (!empty($_POST['name']) && !empty($_POST['surname']) && !empty($_POST['city']
             $admin_message = 'Добавлен новый отзыв от ' . $name . ' ' . $surname . ', который ожидает проверки!';
             mail('u608110@gmail.com', 'Добавлен новый отзыв', $admin_message);
         }
-    } else {
-    echo "Заполните, пожалуйста, все поля!";
-
     }
 }
 

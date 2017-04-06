@@ -13,6 +13,7 @@
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,7 +29,7 @@
 
 
     <form class="form-signin" method="post" action="admin.php">
-        <h2 class="form-signin-heading text-center">Заполните поля для авторизации</h2>
+        <h2 class="form-signin-heading text-center">Авторизация</h2>
         <?php if (isset($_GET['errorLogin'])) : ?>
             <p class="alert alert-danger text-center"><?= $_GET['errorLogin']?></p>
         <?php endif; ?>

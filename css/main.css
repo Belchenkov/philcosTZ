@@ -1,28 +1,14 @@
-/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
 
 html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
 }
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
 
 ::-moz-selection {
     background: #b3d4fc;
@@ -47,12 +33,6 @@ hr {
     padding: 0;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
 audio,
 canvas,
 iframe,
@@ -62,10 +42,6 @@ video {
     vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
 fieldset {
     border: 0;
     margin: 0;
@@ -73,8 +49,8 @@ fieldset {
 }
 
 /*
- * Allow only vertical resizing of textareas.
- */
+* Allow only vertical resizing of textareas.
+*/
 
 textarea {
     resize: vertical;
@@ -95,15 +71,19 @@ textarea {
    Author's custom styles
    ========================================================================== */
     body {
-        background: url('../img/linedpaper.png');
+        background: url('../img/sayagata-400px.png');
+        font-family: 'Cuprum', sans-serif;
+        font-size: 18px;
     }
 
     h1.heading {
+        margin-top: -30px;
+        font-family: 'Lobster', cursive;
         padding: 40px 0;
         text-align: center;
         color: white;
         border-radius: 5px;
-        text-shadow: 1px 2px 2px #eee;
+        text-shadow: 0 1px 1px #eee;
         box-shadow: 0 0 5px 4px rgba(252,212,90, 0.8);
         background: rgb(252,212,90); /* Old browsers */
         background: -moz-linear-gradient(top, rgb(252,212,90) 0%, rgb(252,210,83) 30%, rgb(252,200,42) 63%, rgb(254,191,1) 100%); /* FF3.6-15 */
@@ -122,12 +102,13 @@ textarea {
     }
 
     .last-comments__header {
+        font-family: 'Lobster', cursive;
         text-align: center;
         color: #fff;
         padding: 16px 60px;
         background: rgb(69, 184, 240);
         border-radius: 5px;
-        text-shadow: 1px 2px 2px #eee;
+        text-shadow: 1px 1px 1px #eee;
         box-shadow: 0 1px 2px 2px rgb(69, 184, 240);
     }
 
@@ -139,8 +120,8 @@ textarea {
         color: #fff;
         display:block;
         text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
+        font-family: 'Lobster', cursive;
+        font-size: 19px;
         font-weight: bold;
         padding: 18px 16px;
         margin: 20px auto 40px;
@@ -184,7 +165,6 @@ textarea {
         text-decoration: none;
         color: #fff;
     }
-
 
     footer {
         text-align: center;
@@ -276,15 +256,19 @@ textarea {
     clear: both;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media (min-width: 500px) and (max-width: 700px) {
+    h1.heading {
+        font-size: 2em;
+    }
 }
+
+@media only screen and (max-width: 500px) {
+    h1.heading {
+        font-size: 1.7em;
+    }
+}
+
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),

@@ -47,7 +47,7 @@ if (!empty( $_POST['submit']) && $login == $admin && $pass == $passTrue)  {
                                          title="Банк Филкос"></a>
 
                 <div class="container">
-                    <a href="index.php" class="atHome">На главную</a>
+                    <a href="/" class="atHome">На главную</a>
                 </div>
             </div>
 
@@ -113,7 +113,7 @@ if (!empty( $_POST['submit']) && $login == $admin && $pass == $passTrue)  {
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/ajaxMail.js"></script>
+        <script src="js/ajax.js"></script>
         </body>
         </html>
 

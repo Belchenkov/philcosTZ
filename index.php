@@ -11,14 +11,12 @@
 
 ?>
 
-
-
 <!doctype html>
 <html class="no-js" lang="ru">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Отзывы</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -63,23 +61,23 @@
                             <form id="form" method="post" action="scripts.php">
                                 <div class="form-group">
                                     <label for="name">Имя</label>
-                                    <input type="text" class="form-control" id="name" required name="name" placeholder="Введите Ваше имя ...">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Введите Ваше имя ...">
                                 </div>
                                 <div class="form-group">
                                     <label for="surname">Фамилия</label>
-                                    <input type="text" class="form-control" id="surname" required name="surname" placeholder="Введите Вашу фамилию ...">
+                                    <input type="text" class="form-control" id="surname" name="surname" placeholder="Введите Вашу фамилию ...">
                                 </div>
                                 <div class="form-group">
                                     <label for="city">Город</label>
-                                    <input type="text" class="form-control" id="city" required name="city" placeholder="Из какого Вы города ...">
+                                    <input type="text" class="form-control" id="city" name="city" placeholder="Из какого Вы города ...">
                                 </div>
                                 <div class="form-group">
                                     <label for="age">Возраст</label>
-                                    <input type="number" class="form-control" id="age" required min="1" max="120" name="age" placeholder="Сколько Вам полных лет?">
+                                    <input type="number" class="form-control" id="age" min="1" max="120" name="age" placeholder="Сколько Вам полных лет?">
                                 </div>
                                 <div class="form-group">
                                     <label for="message">Ваш отзыв</label>
-                                    <textarea class="form-control" id="message" rows="6" required name="message" placeholder="Введите отзыв ..."></textarea>
+                                    <textarea class="form-control" id="message" rows="6" name="message" placeholder="Введите отзыв ..."></textarea>
                                 </div>
 
                                 <button id="btn-submit" name="submit" class="btn btn-primary btn-block btn-lg">Отправить</button>
@@ -142,6 +140,6 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/ajaxMail.js"></script>
+        <script src="js/ajax.js"></script>
     </body>
 </html>
