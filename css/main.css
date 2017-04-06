@@ -103,7 +103,8 @@ textarea {
         text-align: center;
         color: white;
         border-radius: 5px;
-
+        text-shadow: 1px 2px 2px #eee;
+        box-shadow: 0 0 5px 4px rgba(252,212,90, 0.8);
         background: rgb(252,212,90); /* Old browsers */
         background: -moz-linear-gradient(top, rgb(252,212,90) 0%, rgb(252,210,83) 30%, rgb(252,200,42) 63%, rgb(254,191,1) 100%); /* FF3.6-15 */
         background: -webkit-linear-gradient(top, rgb(252,212,90) 0%,rgb(252,210,83) 30%,rgb(252,200,42) 63%,rgb(254,191,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -124,12 +125,10 @@ textarea {
         text-align: center;
         color: #fff;
         padding: 16px 60px;
-        border-radius: 4px;
-        background: rgb(230,240,163); /* Old browsers */
-        background: -moz-linear-gradient(top, rgb(230,240,163) 0%, rgb(195,216,37) 23%, rgb(195,216,37) 23%, rgb(210,230,56) 79%, rgb(219,240,67) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, rgb(230,240,163) 0%,rgb(195,216,37) 23%,rgb(195,216,37) 23%,rgb(210,230,56) 79%,rgb(219,240,67) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, rgb(230,240,163) 0%,rgb(195,216,37) 23%,rgb(195,216,37) 23%,rgb(210,230,56) 79%,rgb(219,240,67) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#dbf043',GradientType=0 ); /* IE6-9 */
+        background: rgb(69, 184, 240);
+        border-radius: 5px;
+        text-shadow: 1px 2px 2px #eee;
+        box-shadow: 0 1px 2px 2px rgb(69, 184, 240);
     }
 
     a.green{
@@ -167,9 +166,23 @@ textarea {
         color: white;
     }
 
+    li.last-comments.list-group-item {
+        background: rgb(69, 184, 240);
+    }
+
     .atHome {
         float: right;
-        padding: 15px 20px ;
+        padding: 15px 20px;
+        background-color: #777777;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 1.2em;
+    }
+
+    .atHome:hover {
+        background-color: #878787;
+        text-decoration: none;
+        color: #fff;
     }
 
 

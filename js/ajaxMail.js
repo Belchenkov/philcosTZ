@@ -20,5 +20,28 @@ $(document).ready(function () {
         );
 
     });
+    $('a.btn.btn-success').on('click', function (e) {
+        e.preventDefault();
+
+        var recordId = e.target.attributes['id'].value;
+
+        var parent = $(this).parents('ul');
+        console.log($(this).parents('ul'));
+
+        $.get("scripts.php",
+             {
+                 id: recordId
+             },
+             function (data) {
+                 $('div#messageServer').show(500);
+                 $("div#messageServer").html('<h3 id="alertAdd" class="alert alert-success text-center">'+data+'</h3>');
+
+                 parent.hide(500);
+                 setTimeout(function () {
+                      $("div#messageServer").hide(500);
+                 }, 2000);
+             }
+         );
+    });
 
 });

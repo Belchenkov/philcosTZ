@@ -1,4 +1,5 @@
 <?php
+
     require_once 'db/connect_db.php';
 
     // SELECT QUERY
@@ -45,9 +46,7 @@
             </div>
         </header>
 
-
         <main>
-
             <section id="formComments">
                 <div class="container">
                     <div class="row">
@@ -97,14 +96,14 @@
                                 <?php endwhile; ?>
                             <?php endif; ?>
                         </div><!-- /.col-md-7-->
-                        <div class="col-md-4 col-lg-offset-1">
+                        <div class="col-md-4 col-md-offset-1 col-md-offset-1 col-lg-4 col-lg-offset-1 col-lg-offset-1">
                             <h3 class="last-comments__header">Последние отзывы</h3>
                             <div class="last-comments__box">
 
                                 <?php if (!empty($messages_last)) :?>
                                     <?php while($row = mysqli_fetch_assoc($messages_last)) : ?>
                                         <ul class="list-group">
-                                            <li class="list-group-item "><?= $row['name']; ?> <?= $row['surname']; ?></li>
+                                            <li class="last-comments list-group-item"><?= $row['name']; ?> <?= $row['surname']; ?></li>
                                             <li class="list-group-item">Возраст: <?= $row['age']; ?></li>
                                             <li class="list-group-item">Город: <?= $row['city']; ?></li>
                                             <li class="list-group-item"><?= $row['message']; ?></li>
@@ -140,7 +139,6 @@
         </footer>
 
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
