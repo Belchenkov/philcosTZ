@@ -2,17 +2,34 @@
 
 require_once 'db/connect_db.php';
 
-if (isset($_GET['id'])) {
-    $id = (integer)htmlspecialchars(trim($_GET['id'], ' '));
+// Public Comments from Admin
+if (isset($_GET['publicId'])) {
+    $publicId = (integer)htmlspecialchars(trim($_GET['publicId'], ' '));
 
     if ($conn) {
         // UPDATE DATA
-        $query = "UPDATE `comments` SET `admin_ok`= 1 WHERE `id`=$id";
+        $query = "UPDATE `comments` SET `admin_ok`= 1 WHERE `id`=$publicId";
 
         if (!mysqli_query($conn, $query)) {
             die(mysqli_error($conn));
         } else {
             echo "Отзыв опубликован!";
+        }
+    }
+}
+
+// Delete Comments from Admin
+if (isset($_GET['deleteId'])) {
+    $deleteId = (integer)htmlspecialchars(trim($_GET['deleteId'], ' '));
+
+    if ($conn) {
+        // DELETE DATA
+        $query = "DELETE FROM `comments` WHERE  `id`=$deleteId";
+
+        if (!mysqli_query($conn, $query)) {
+            die(mysqli_error($conn));
+        } else {
+            echo "Отзыв удален!";
         }
     }
 }
@@ -36,7 +53,7 @@ if (!empty($_POST['name']) && !empty($_POST['surname']) && !empty($_POST['city']
             die(mysqli_error($conn));
         } else {
             $admin_message = 'Добавлен новый отзыв от ' . $name . ' ' . $surname . ', который ожидает проверки!';
-            mail('u608110@gmail.com', 'Добавлен новый отзыв', $admin_message);
+            mail('', 'Добавлен новый отзыв', $admin_message);
         }
     }
 }

@@ -44,10 +44,10 @@ if (!empty( $_POST['submit']) && $login == $admin && $pass == $passTrue)  {
         <header>
             <div>
                 <a href="index.php"><img src="http://filkos.com/templates/beez5/images/logo_2.svg" alt="Филкос"
-                                         title="Банк Филкос"></a>
+                                         title="http://filkos.com/"></a>
 
                 <div class="container">
-                    <a href="/" class="atHome">На главную</a>
+                    <a href="index.php" class="atHome">На главную</a>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@ if (!empty( $_POST['submit']) && $login == $admin && $pass == $passTrue)  {
 
                 <h1 class="heading">Отзывы ожидающие проверки</h1>
 
-                <div id="messageServer"></div>
+
 
             </div>
         </header>
@@ -66,6 +66,7 @@ if (!empty( $_POST['submit']) && $login == $admin && $pass == $passTrue)  {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
+                            <div id="messageServer"></div>
 
                             <?php if (!empty($messages_all)) : ?>
                                 <?php while ($row = mysqli_fetch_assoc($messages_all)) : ?>
@@ -76,6 +77,7 @@ if (!empty( $_POST['submit']) && $login == $admin && $pass == $passTrue)  {
                                         <li class="list-group-item"><?= $row['message']; ?></li>
                                         <li class="list-group-item">
                                             <a href="#" id="<?= $row['id'] ?>" class="btn btn-success">Разместить</a>
+                                            <a href="#" id="<?= $row['id'] ?>" class="btn btn-danger">Удалить</a>
                                         </li>
                                     </ul>
                                     <br>
@@ -107,7 +109,9 @@ if (!empty( $_POST['submit']) && $login == $admin && $pass == $passTrue)  {
         </section>
 
         <footer>
-            <p>&copy; 2017 Отзывы о компании ФИЛКОС. Все права защищены.</p>
+            <div class="container">
+                <p>&copy; 2017 Отзывы о компании ФИЛКОС. Все права защищены.</p>
+            </div>
         </footer>
 
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>

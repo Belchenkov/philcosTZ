@@ -12,10 +12,17 @@ $(document).ready(function () {
                         message: $('[name="message"]').val()
                     },
                     function (data) {
+                        $('div#messageServer').show(500);
                         $("div#messageServer").html('<h3 id="alertAdd" class="alert alert-success text-center">'+data+'</h3>');
-                        $('#form').hide(500);
+
                         setTimeout(function () {
+                            $('[name="name"]').val('');
+                            $('[name="surname"]').val('');
+                            $('[name="city"]').val('');
+                            $('[name="age"]').val('');
+                            $('[name="message"]').val('');
                             $("div#messageServer").hide(1000);
+                            $('#form').hide(1000);
                         }, 3000);
                     }
                 );
@@ -35,11 +42,10 @@ $(document).ready(function () {
         var recordId = e.target.attributes['id'].value;
 
         var parent = $(this).parents('ul');
-        console.log($(this).parents('ul'));
 
         $.get("scripts.php",
              {
-                 id: recordId
+                 publicId: recordId
              },
              function (data) {
                  $('div#messageServer').show(500);
@@ -52,5 +58,29 @@ $(document).ready(function () {
              }
          );
     });
+
+    $('a.btn.btn-danger').on('click', function (e) {
+        e.preventDefault();
+
+        var recordId = e.target.attributes['id'].value;
+
+        var parent = $(this).parents('ul');
+
+        $.get("scripts.php",
+            {
+                deleteId: recordId
+            },
+            function (data) {
+                $('div#messageServer').show(500);
+                $("div#messageServer").html('<h3 id="alertAdd" class="alert alert-success text-center">'+data+'</h3>');
+
+                parent.hide(500);
+                setTimeout(function () {
+                    $("div#messageServer").hide(500);
+                }, 2000);
+            }
+        );
+    });
+
 
 });
